@@ -17,23 +17,23 @@ public class Livro {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     @Column (name="id")
-    private String id;
+    private String livro_id;
     @Column (name="titulo")
-    private String titulo;
+    private String livro_titulo;
     @Column (name="editora")
-    private String editora;
+    private String livro_editora;
     @Column (name="edicao")
-    private String edicao;
+    private String livro_edicao;
     @Column (name="ano")
-    private String ano;
+    private String livro_ano;
     @Column (name="autor")
-    private String autor;
+    private String livro_autor;
     @Column (name="disponibilidade")
-    private String disponibilidade;
+    private String livro_disponibilidade;
     @Column (name="quantidade")
-    private String quantidade;
+    private String livro_quantidade;
     @Column (name="descricao")
-    private String descricao;
+    private String livro_descricao;
     @ManyToOne(fetch = FetchType.EAGER)
     @Cascade (CascadeType.SAVE_UPDATE)
     @Fetch (FetchMode.JOIN)
@@ -41,129 +41,129 @@ public class Livro {
     private Usuario usuario;
 
     /**
-     * @return the id
+     * @return the livro_id
      */
-    public String getId() {
-        return id;
+    public String getLivro_id() {
+        return livro_id;
     }
 
     /**
-     * @param id the id to set
+     * @param livro_id the livro_id to set
      */
-    public void setId(String id) {
-        this.id = id;
+    public void setLivro_id(String livro_id) {
+        this.livro_id = livro_id;
     }
 
     /**
-     * @return the titulo
+     * @return the livro_titulo
      */
-    public String getTitulo() {
-        return titulo;
+    public String getLivro_titulo() {
+        return livro_titulo;
     }
 
     /**
-     * @param titulo the titulo to set
+     * @param livro_titulo the livro_titulo to set
      */
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setLivro_titulo(String livro_titulo) {
+        this.livro_titulo = livro_titulo;
     }
 
     /**
-     * @return the editora
+     * @return the livro_editora
      */
-    public String getEditora() {
-        return editora;
+    public String getLivro_editora() {
+        return livro_editora;
     }
 
     /**
-     * @param editora the editora to set
+     * @param livro_editora the livro_editora to set
      */
-    public void setEditora(String editora) {
-        this.editora = editora;
+    public void setLivro_editora(String livro_editora) {
+        this.livro_editora = livro_editora;
     }
 
     /**
-     * @return the edicao
+     * @return the livro_edicao
      */
-    public String getEdicao() {
-        return edicao;
+    public String getLivro_edicao() {
+        return livro_edicao;
     }
 
     /**
-     * @param edicao the edicao to set
+     * @param livro_edicao the livro_edicao to set
      */
-    public void setEdicao(String edicao) {
-        this.edicao = edicao;
+    public void setLivro_edicao(String livro_edicao) {
+        this.livro_edicao = livro_edicao;
     }
 
     /**
-     * @return the ano
+     * @return the livro_ano
      */
-    public String getAno() {
-        return ano;
+    public String getLivro_ano() {
+        return livro_ano;
     }
 
     /**
-     * @param ano the ano to set
+     * @param livro_ano the livro_ano to set
      */
-    public void setAno(String ano) {
-        this.ano = ano;
+    public void setLivro_ano(String livro_ano) {
+        this.livro_ano = livro_ano;
     }
 
     /**
-     * @return the autor
+     * @return the livro_autor
      */
-    public String getAutor() {
-        return autor;
+    public String getLivro_autor() {
+        return livro_autor;
     }
 
     /**
-     * @param autor the autor to set
+     * @param livro_autor the livro_autor to set
      */
-    public void setAutor(String autor) {
-        this.autor = autor;
+    public void setLivro_autor(String livro_autor) {
+        this.livro_autor = livro_autor;
     }
 
     /**
-     * @return the disponibilidade
+     * @return the livro_disponibilidade
      */
-    public String getDisponibilidade() {
-        return disponibilidade;
+    public String getLivro_disponibilidade() {
+        return livro_disponibilidade;
     }
 
     /**
-     * @param disponibilidade the disponibilidade to set
+     * @param livro_disponibilidade the livro_disponibilidade to set
      */
-    public void setDisponibilidade(String disponibilidade) {
-        this.disponibilidade = disponibilidade;
+    public void setLivro_disponibilidade(String livro_disponibilidade) {
+        this.livro_disponibilidade = livro_disponibilidade;
     }
 
     /**
-     * @return the quantidade
+     * @return the livro_quantidade
      */
-    public String getQuantidade() {
-        return quantidade;
+    public String getLivro_quantidade() {
+        return livro_quantidade;
     }
 
     /**
-     * @param quantidade the quantidade to set
+     * @param livro_quantidade the livro_quantidade to set
      */
-    public void setQuantidade(String quantidade) {
-        this.quantidade = quantidade;
+    public void setLivro_quantidade(String livro_quantidade) {
+        this.livro_quantidade = livro_quantidade;
     }
 
     /**
-     * @return the descricao
+     * @return the livro_descricao
      */
-    public String getDescricao() {
-        return descricao;
+    public String getLivro_descricao() {
+        return livro_descricao;
     }
 
     /**
-     * @param descricao the descricao to set
+     * @param livro_descricao the livro_descricao to set
      */
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setLivro_descricao(String livro_descricao) {
+        this.livro_descricao = livro_descricao;
     }
 
     /**
@@ -179,6 +179,7 @@ public class Livro {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+
 
     
 }
