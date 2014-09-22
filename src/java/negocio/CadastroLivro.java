@@ -49,14 +49,14 @@ public class CadastroLivro implements Cadastro<Livro> {
     @Override
     public boolean validar(Livro obj) throws Exception {
         
-        String ano =obj.getAno().trim();
-        String autor = obj.getAutor();
-        String descricao= obj.getDescricao();
-        String disponibilidade = obj.getDisponibilidade();
-        String edicao = obj.getEdicao();
-        String editora = obj.getEditora();
-        String quantidade = obj.getQuantidade().trim();
-        String titulo = obj.getTitulo();
+        String ano =obj.getLivro_ano().trim();
+        String autor = obj.getLivro_autor();
+        String descricao= obj.getLivro_descricao();
+        String disponibilidade = obj.getLivro_disponibilidade();
+        String edicao = obj.getLivro_edicao();
+        String editora = obj.getLivro_editora();
+        String quantidade = obj.getLivro_quantidade().trim();
+        String titulo = obj.getLivro_titulo();
         if (ano == null || ano.isEmpty()) {
 			throw new CampoObrigatorioNaoPreenchidoException("O Campo Ano não preenchido, favor insira o nome do Livro !");
 		}
@@ -84,12 +84,12 @@ public class CadastroLivro implements Cadastro<Livro> {
         if (titulo == null || titulo.isEmpty()) {
 			throw new CampoObrigatorioNaoPreenchidoException("O Campo Titulo não preenchido, favor insira o nome do Livro !");
 		}
-        obj.setAutor(autor.toUpperCase());
-        obj.setDescricao(descricao.toUpperCase());
-        obj.setDisponibilidade(disponibilidade.toUpperCase());
-        obj.setEdicao(edicao.toUpperCase());
-        obj.setEditora(editora.toUpperCase());
-        obj.setTitulo(titulo.toUpperCase());
+        obj.setLivro_autor(autor.toUpperCase());
+        obj.setLivro_descricao(descricao.toUpperCase());
+        obj.setLivro_disponibilidade(disponibilidade.toUpperCase());
+        obj.setLivro_edicao(edicao.toUpperCase());
+        obj.setLivro_editora(editora.toUpperCase());
+        obj.setLivro_titulo(titulo.toUpperCase());
         
         
         return true;
