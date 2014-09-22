@@ -52,21 +52,21 @@ public class CadastroUsuario implements Cadastro<Usuario> {
     @Override
     public boolean validar(Usuario obj) throws Exception {
         
-        String bairro = obj.getBairro();
-        String celular = obj.getCelular();
-        String cep = obj.getCep();
-        String cidade = obj.getCidade();
-        String complemento = obj.getComplemento();
-        String cpf = obj.getCpf();
-        Date data = obj.getDataNascimento();
-        String email = obj.getEmail();
-        String estado = obj.getEstado();
-        String login = obj.getLogin();
-        String logradouro = obj.getLogradouro();
-        String nome = obj.getNome();
-        String numero = obj.getNumero();
-        String rg = obj.getRg();
-        String senha = obj.getSenha();
+        String bairro = obj.getUsuario_bairro();
+        String celular = obj.getUsuario_celular();
+        String cep = obj.getUsuario_cep();
+        String cidade = obj.getUsuario_cidade();
+        String complemento = obj.getUsuario_complemento();
+        String cpf = obj.getUsuario_cpf();
+        Date data = obj.getUsuario_dataNascimento();
+        String email = obj.getUsuario_email();
+        String estado = obj.getUsuario_estado();
+        String login = obj.getUsuario_login();
+        String logradouro = obj.getUsuario_logradouro();
+        String nome = obj.getUsuario_nome();
+        String numero = obj.getUsuario_numero();
+        String rg = obj.getUsuario_rg();
+        String senha = obj.getUsuario_senha();
         
         
         if (ano == null || ano.isEmpty()) {
@@ -120,14 +120,14 @@ public class CadastroUsuario implements Cadastro<Usuario> {
     	private void gerarSenhaCriptografada(Usuario obj)
 			throws NoSuchAlgorithmException, UnsupportedEncodingException {
 		MessageDigest algorithm = MessageDigest.getInstance("SHA-256");
-		byte messageDigest[] = algorithm.digest(obj.getSenha().getBytes("UTF-8"));
+		byte messageDigest[] = algorithm.digest(obj.getUsuario_senha().getBytes("UTF-8"));
 
 		StringBuilder hexString = new StringBuilder();
 		for (byte b : messageDigest) {
 			hexString.append(String.format("%02X", 0xFF & b));
 		}
 		String senha = hexString.toString();
-		obj.setSenha(senha);
+		obj.setUsuario_senha(senha);
 	}
         	public Usuario login(Usuario usuario) throws Exception {
 
@@ -141,7 +141,7 @@ public class CadastroUsuario implements Cadastro<Usuario> {
 		}
 		if (lista== null || lista.size() ==0) {
 
-			throw new Exception("UsuÃ¡rio " + usuario.getLogin() + " nÃ£o encontrado ou senha invÃ¡lida !");
+			throw new Exception("UsuÃ¡rio " + usuario.getUsuario_login() + " nÃ£o encontrado ou senha invÃ¡lida !");
 		}
 
 		Usuario retorno = lista.get(0);
@@ -152,15 +152,15 @@ public class CadastroUsuario implements Cadastro<Usuario> {
 		
         Usuario usuario = new Usuario();
 		
-	usuario.setEmail(emailUsuario);
+	usuario.setUsuario_email(emailUsuario);
 		
 	List<Usuario> lista = filtrar(usuario);
 		
 	usuario = lista.get(0);
 	
-	String senha = usuario.getLogin().substring(1, 3) + (usuario.getId() * 89 + 31);
+	String senha = usuario.getUsuario_login().substring(1, 3) + (usuario.getUsuario_id() * 89 + 31);
 		
-	usuario.setSenha(senha);
+	usuario.setUsuario_senha(senha);
 		
 	gerarSenhaCriptografada(usuario);
 		
